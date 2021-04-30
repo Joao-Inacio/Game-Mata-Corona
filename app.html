@@ -8,7 +8,21 @@
         <link rel="stylesheet" href="style.css">
         <title>Mata Corona</title>
     </head>
-    <body>
+    <body onresize="ajustaTamanhoJogo()">
         <img class="fundo" src="img/rua-25-de-marco-1.jpg" alt="">
+        <div class="painel">
+            <img src="img/coracao_cheio.png" alt="">
+            <img src="img/coracao_cheio.png" alt="">
+            <img src="img/coracao_cheio.png" alt="">
+        </div>
+        <div class="cronometro">
+            Tempo restante: <span id="cronometro"></span>
+        </div>
+        <script>
+            document.getElementById('cronometro').innerHTML = tempo
+            let criarCorona = setInterval(function() {
+                posicaoRandomica()
+            }, criarCoronaTempo)
+        </script>
     </body>
 </html>
