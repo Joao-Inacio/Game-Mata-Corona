@@ -1,10 +1,12 @@
-
+html{
+    cursor: url(img/alcohol-gel.png) 30 30, auto;
+}
 body{
-    background-image: url(img/rua-25-de-marco-1.jpg);
+    background-image: url(img/Rua.jpg);
     background-repeat: no-repeat;
     background-size: cover;
-    overflow-y: hidden;
-    Opacity: 0.3;
+    /* overflow-y: hidden; */
+    /* Opacity: 0.8; */
 }
 .corona1{
     width: 50px;
@@ -31,7 +33,7 @@ body{
     left:0px;
     bottom:0px;
     border-top: solid 1px #fff;
-    background-color: #fff;
+    background-color:whitesmoke;
     opacity: 0.7;
 }
 .vidas{

@@ -1,9 +1,9 @@
-let altura = 0 
-let largura = 0
-let vidas = 1
-let tempo = 15
-let criarCoronaTempo = 1500
-let nivel = window.location.search
+var altura = 0 
+var largura = 0
+var vidas = 1
+var tempo = 15
+var criarCoronaTempo = 1500
+var nivel = window.location.search
 nivel = nivel.replace('?', '')
 if (nivel === 'normal') {
     criarCoronaTempo = 1500
@@ -22,7 +22,7 @@ function ajustaTamanhoJogo() {
     largura = window.innerWidth
 }
 ajustaTamanhoJogo()
-let cronometro = setInterval(function () {
+var cronometro = setInterval(function () {
     tempo -= 1
     if (tempo < 0) {
         clearInterval(cronometro)
@@ -37,19 +37,19 @@ function posicaoRandomica() {
     if (document.getElementById('corona')) {
         document.getElementById('corona').remove()
         if (vidas > 3) {
-            window.location.href = 'fimDeJogo.html'
+            window.location.href = 'gameOver.html'
         }else{
-            document.getElementById('v' + vidas).src = "" //aqui vai a vida
+            document.getElementById('v' + vidas).src = "img/coracao_vazio.png" //aqui vai a vida
             vidas++
         }
     }
-    let posicaoX = Math.floor(Math.random() * largura) - 90
-    let posicaoY = Math.floor(Math.random() * altura) - 90
+    var posicaoX = Math.floor(Math.random() * largura) - 90
+    var posicaoY = Math.floor(Math.random() * altura) - 90
     posicaoX = posicaoX < 0 ? 0 : posicaoX
     posicaoY = posicaoY < 0 ? 0 : posicaoY
 
     // Criar HTML
-    let corona = document.createElement('img')
+    var corona = document.createElement('img')
     corona.src = 'img/Corona.png'
     corona.className = tamanhoAleatorio() + ' ' + ladoAleatorio()
     corona.style.left = posicaoX + 'px'
@@ -62,7 +62,7 @@ function posicaoRandomica() {
     document.body.appendChild(corona)
 }
 function tamanhoAleatorio() {
-    let classe = Math.floor(Math.random() * 3)
+    var classe = Math.floor(Math.random() * 3)
     switch (classe) {
         case 0:
             return 'corona1'
@@ -73,7 +73,7 @@ function tamanhoAleatorio() {
     }
 }
 function ladoAleatorio() {
-    let classe = Math.floor(Math.random() * 2)
+    var classe = Math.floor(Math.random() * 2)
     switch (classe) {
         case 0:
             return 'ladoA'
